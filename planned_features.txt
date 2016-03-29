@@ -1,0 +1,37 @@
+file analyzer features:
+
+
+search comments
+	remove or regex strings within the other parts of the code, along with variable names. this will allow us to search for comments without having exact matches
+
+search function calls:
+	check constants and variable names.
+	drawbacks: you might need to whitelist/blacklist functions to get good results
+
+search code indentation/structure:
+	identify changes in indentation structure, can identify copied code or code that was written in another editor by another person (includes spaces/tabs)
+
+search use of paranthesis
+	includes if/then, do, while, and calls that only use strings such as print "abc"
+	function calls, if it puts a space in between the function name and the args sometimes then it might be pasted
+	function calls, spaces after the paranthesis and before the end
+
+search use of string quotes
+	allow use of 'a' character, but if it has another place where they didn't use "a" character then it's probably copied from somewhere
+	if it switches in between "string" and 'string' then it might be copied
+
+search change of variable naming style
+	list   : strHungarian, lowerCamelCase, UpperCamelCase, lower_case
+	ignore : SHOUTY_CAMEL_CASE
+
+random statements inside the code, or duplicated
+	if ( <not> SERVER) then end
+
+switch of commenting style
+	two sets, -- and // then --[[]] and /**/
+
+switch of garry operators
+	!= and ~= then && and and then || and or
+
+switch of indexing arrays
+	arra["shit"] vs arra.shit
